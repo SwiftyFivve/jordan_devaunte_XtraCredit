@@ -1,6 +1,7 @@
 package com.jordanweaver.jordan_devaunte_xtracredit;
 
 import android.app.Activity;
+<<<<<<< HEAD
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -19,14 +20,46 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+=======
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
+>>>>>>> developmentBranch
 
 
 public class MainActivity extends Activity {
+
+
+    Spinner weatherSpinner;
+    Context mContext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
+=======
+
+        weatherSpinner = (Spinner) findViewById(R.id.weatherSpinner);
+
+        mContext = this;
+
+
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(
+                mContext,
+                R.array.spinner_stuff,
+                android.R.layout.simple_dropdown_item_1line
+        );
+
+        weatherSpinner.setAdapter(spinnerAdapter);
+>>>>>>> developmentBranch
 
         ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null) {
@@ -34,6 +67,7 @@ public class MainActivity extends Activity {
             if (info != null && info.isConnected()) {
                 MyTask myTask = new MyTask();
 
+<<<<<<< HEAD
                 myTask.execute("http://api.wunderground.com/api/4bfff3e6246abd8a/conditions/q/FL/orlando.json");
 
             } else {
@@ -182,5 +216,10 @@ public class MainActivity extends Activity {
         }
 
 
+=======
+
+>>>>>>> developmentBranch
     }
+
+
 }
